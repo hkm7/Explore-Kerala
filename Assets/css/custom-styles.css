@@ -6,7 +6,7 @@
     }
 
     /*Header Image size phone*/
-    #intro-example {
+    #intro-img {
         height: 400px; 
         width: auto;
     }
@@ -15,14 +15,38 @@
         font-size: 75px;
         font-family: 'Great Vibes', cursive, 'Pacifico', cursive!important;
     }
+
+    #big-decorated-text{
+        font-family: 'Great Vibes', cursive, 'Pacifico', cursive!important;
+        font-size: 50px;
+    }
+
     a{
         color: #fb2056;
     }
     a:hover {
         color: #5eaa34;
     }
+
     #contact-form-div{
         margin: auto;
+    }
+
+    p.text-desc{
+        padding-left: 5%;
+        padding-right: 5%;
+        text-decoration: #000, justify;
+        font-size: large;
+        font-family: sans-serif,Georgia, 'Times New Roman', Times, serif;
+        text-align: center;
+    }
+
+    #tvm-carousel,#klm-carousel,#alp-carousel{
+        max-height:50%; 
+        overflow:hidden; 
+        margin-left: auto; 
+        margin-right: auto; 
+        margin-top:2%;
     }
 }
 
@@ -32,50 +56,30 @@
 @media(min-width: 900px){
     /* Added a little padding to have a little space from left for the logo/text */
     #main-logo{
-        padding-left:1em;
-        font-family: 'Great Vibes', cursive, 'Pacifico', cursive!important;
         font-size:20px;
         }
 
     /*Header Image size Desktop*/    
-    #intro-example {
+    #intro-img {
         height: 600px;
-        width: auto;
         }
 
 
     #really-big-text{
-            font-family: 'Great Vibes', cursive, 'Pacifico', cursive!important;
             font-size: 170px;
         }
     
     #big-decorated-text{
-        font-family: 'Great Vibes', cursive, 'Pacifico', cursive!important;
         font-size: 100px;
     }
-
-    p.text-desc{
-        padding-left: 10%;
-        padding-right: 10%;
-        text-decoration: #000, justify;
-        font-size: large;
-        font-family: sans-serif,Georgia, 'Times New Roman', Times, serif;
-        text-align: center;
-    }
     
-    .vl {
+    .vl{
         margin-top: 2%;
         margin-bottom:3%;
         border-right: 6px solid #0080ff;
         height: 500px;
       }
     
-    a{
-        color: #fb2056;
-    }
-    a:hover {
-        color: #5eaa34;
-    }
 
     #contact-form-div{
         margin-left: 20%;
