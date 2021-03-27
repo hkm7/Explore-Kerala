@@ -150,5 +150,4 @@ function loginCheck() {
         error.style.color = "red";
         return false;
     }
-
 }
