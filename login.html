@@ -56,12 +56,14 @@
                     <!-- LOG IN -->
                     <form>
                         <div class="mb-3">
-                            <label for="Username" class="form-label">Username</label>
-                            <input type="username" class="form-control" id="username-login" aria-describedby="emailHelp">
+                            <label for="Phone" class="form-label">Phone number</label>
+                            <input type="number" class="form-control" id="phone-login">
+                            <div id="phone-login-msg" class="form-text"></div>
                         </div>
                         <div class="mb-3">
                             <label for="Password" class="form-label">Password</label>
                             <input type="password" class="form-control" id="password-login">
+                            <div id="password-login-msg" class="form-text"></div>
                         </div>
                         <div class="mb-3 form-check">
                             <input type="checkbox" class="form-check-input" id="signed-in-checkbox">
@@ -80,23 +82,26 @@
                     <p style="font-weight: bold;"> Don't have an account ? <br>
                     SIGN UP<br></p>
                     <!-- SIGN UP -->
-                    <form>
+                    <form onsubmit="return signupCheck()" action="./index.html">
                         <div class="mb-3">
-                            <label for="Username" class="form-label">Username</label>
-                            <input type="username" class="form-control" id="username-signup" aria-describedby="emailHelp">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="number" class="form-control" id="phone-signup">
+                            <div id="phone-signup-msg" class="form-text"></div>
                         </div>
                         <div class="mb-3">
                             <label for="Email" class="form-label">Email address</label>
                             <input type="email" class="form-control" id="email-signup" aria-describedby="emailHelp">
+                            <div id="email-signup-msg" class="form-text"></div>
                         </div>
                         <div class="mb-3">
                             <label for="Password" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="password-login">
-                            <div id="password-msg" class="form-text">Make sure it contains Uppercase, Lowercase, Numbers and special characters.</div>
+                            <input type="password" class="form-control" id="password-signup">
+                            <div id="password-signup-msg" class="form-text">Make sure it contains atleast 8 characters including Uppercase, Lowercase, Numbers and special characters.</div>
                         </div>
                         <div class="mb-3">
                             <label for="Password" class="form-label">Confirm Password</label>
-                            <input type="password" class="form-control" id="confirm-password-login">
+                            <input type="password" class="form-control" id="confirm-password-singup">
+                            <div id="confirm-password-signup-msg" class="form-text"></div>
                         </div>
                         <button type="submit" class="btn btn-primary">Sign Up</button>
                     </form>
@@ -107,7 +112,11 @@
 
     </header>
     <!-- HEADER CLOSED -->
-   
+
+    <!-- CUSTOM SCRIPTS: -->
+        <script src="./Assets/js/custom-script.js"></script>
+    <!-- CUSTOM SCRIPTS -->
+
 </body>
     
 </html>
