@@ -141,7 +141,7 @@ function checkpass() {
         return true;
     } else {
         pass2.style.color = "red";
-        confPassSignupMsg.innerHTML = "Passwords doesn't match";
+        confPassSignupMsg.innerHTML = "Passwords don't match";
         confPassSignupMsg.style.color = "red";
         confirmPasswordSignupFlag = false;
         return true;
