@@ -1,9 +1,7 @@
 // login variables
 var phoneLogin = document.getElementById("phone-login");
 var passwordLogin = document.getElementById("password-login");
-
 var phoneLoginMsg = document.getElementById("phone-login-msg");
-var passwordLoginMsg = document.getElementById("password-login-msg");
 
 // signup variables
 var phoneSignUp = document.getElementById("phone-signup");
@@ -42,6 +40,25 @@ var str4 = /^(?=.*[!@#$%^&*])$/                                 // special chara
 
 //***************************Value check functions - LOGIN*******************************
 
+//Login phone validation 
+function phonevalidlogin() {
+    if (phoneExp.test(phoneLogin.value)) {
+        phoneLoginMsg.innerHTML = "Valid Phone Number.";
+        phoneLoginMsg.style.color = "green";
+        phoneLoginFlag = true;
+        // console.log("Phone ethi");
+        return true;
+    } 
+    else {
+        phoneLoginMsg.innerHTML = "Invalid Phone Number.";
+        phoneLoginMsg.style.color = "red";
+        phoneLoginFlag = false;
+        return false;
+    }
+}
+
+//***************************Value check functions - SIGNUP*******************************
+
 // Phone Number validation
 function phonevalid() {
     if (phoneExp.test(phoneSignUp.value)) {
@@ -58,66 +75,6 @@ function phonevalid() {
         return false;
     }
 }
-
-//Login phone validation 
-function phonevalidlogin() {
-    if (phoneExp.test(phoneLogin.value)) {
-        phoneLoginMsg.innerHTML = "Valid Phone Number.";
-        phoneLoginMsg.style.color = "green";
-        phoneLoginFlag = true;
-        // console.log("Phone ethi");
-        return true;
-    } 
-    else {
-        phoneLoginMsg.innerHTML = "Invalid Phone Number.";
-        phoneLoginMsg.style.color = "red";
-        phoneLoginFlag = false
-        return false;
-    }
-}
-
-// Login password strength and validation
-function passStrengthLogin() {
-    let passStrengthLogin = 0;
-
-    if (str4.test(passwordLogin.value)) {
-        passStrengthLogin = (passStrengthLogin + 1) % 3;
-        passwordLoginMsg.innerHTML = str[passStrengthLogin];
-        passwordLoginMsg.style.color = color[passStrengthLogin];
-        passwordLogin.style.color = color[passStrengthLogin];
-        passwordLoginFlag = true;
-        return true;
-    } else if (str3.test(passwordLogin.value)) {
-        passStrengthLogin = (passStrengthLogin + 1) % 3;
-        passwordLoginMsg.innerHTML = str[passStrengthLogin];
-        passwordLoginMsg.style.color = color[passStrengthLogin];
-        passwordLogin.style.color = color[passStrengthLogin];
-        passwordLoginFlag = true;
-        return true;
-    } else if (str2.test(passwordLogin.value)) {
-        passStrengthLogin = (passStrengthLogin + 1) % 3;
-        passwordLoginMsg.innerHTML = str[passStrengthLogin];
-        passwordLoginMsg.style.color = color[passStrengthLogin];
-        passwordLogin.style.color = color[passStrengthLogin];
-        passwordLoginFlag = true;
-        return true;
-    } else if (passExp.test(passwordLogin.value)) {
-        passStrengthLogin = 2;
-        passwordLoginMsg.innerHTML = str[passStrengthLogin];
-        passwordLoginMsg.style.color = color[passStrengthLogin];
-        passwordLogin.style.color = color[passStrengthLogin];
-        passwordLoginFlag = true;
-        return true;
-    } else {
-        passwordLoginFlag = false;
-        passwordLoginMsg.innerHTML = str[passStrengthLogin];
-        passwordLoginMsg.style.color = color[passStrengthLogin];
-        passwordSignUp.style.color = color[passStrengthLogin];
-        return false;
-    }
-}
-
-//***************************Value check functions - SIGNUP*******************************
 
 // E-Mail validation signup
 function emailvalid() {
@@ -195,16 +152,15 @@ function checkpass() {
 function loginCheck() {
     if (phoneExp.test(phoneLogin.value)) {
         if (passExp.test(passwordLogin.value)) {
-            return "index.html"
+            alert("Login successful!");
+            return true;
         } 
         else {
-            error.innerHTML = "Invalid Credentials.Try Again"
-            error.style.color = "red";
+            alert("Login failed: Invalid credentials");
             return false;
         }
     } else {
-        error.innerHTML = "Invalid Credentials.Try Again"
-        error.style.color = "red";
+        alert("Login failed: Invalid credentials");
         return false;
     }
 }
@@ -221,3 +177,6 @@ function signupCheck() {
         return false;
     }
 }
+
+
+// ******************************************************************************************************

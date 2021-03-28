@@ -62,14 +62,13 @@
                         </div>
                         <div class="mb-3">
                             <label for="Password" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="password-login" required onkeyup="passStrengthLogin()">
-                            <div id="password-login-msg" class="form-text"></div>
+                            <input type="password" class="form-control" id="password-login" required>
                         </div>
                         <div class="mb-3 form-check">
                             <input type="checkbox" class="form-check-input" id="signed-in-checkbox">
                             <label class="form-check-label">Keep me signed in</label>
                         </div>
-                        <button type="submit" class="btn btn-primary">Login</button>
+                        <button type="submit" id="loginButton" class="btn btn-primary">Login</button>
                     </form>
                     <!-- LOG IN -->
                 </div>
@@ -103,7 +102,7 @@
                             <input type="password" class="form-control" id="confirm-password-singup" required onkeyup="passStrength()">
                             <div id="confirm-password-signup-msg" class="form-text"></div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Sign Up</button>
+                        <button type="submit" id="signupButton" class="btn btn-primary">Sign Up</button>
                     </form>
                     <!-- SIGN UP -->
                 </div>
