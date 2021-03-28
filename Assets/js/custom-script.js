@@ -31,10 +31,16 @@ var emailExp = /^([\w\.-]+)@([\w\.-]+).([a-z]{2,3})(.[a-z]{2,3})?$/;
 var passExp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,}$/;
 
 // Password assist
-var str = ["Bad", "Average", "Good"]
+var str = ["Bad", "Average", "Good"];
 var color = ["Red", "Yellow", "Green"];
 
-//***************************Value check functions - SIGN UP*******************************
+
+var str1 = /^(?=.{8,})$/                                        //Atleast 8 characters check
+var str2 = /^(?=.*[a-z])(?=.*[A-Z])$/                           //lowercase and uppercase check
+var str3 = /^(?=.*[0-9])(?=.*[0-9])$/                           // Numeric character check
+var str4 = /^(?=.*[!@#$%^&*])$/                                 // special character check
+
+//***************************Value check functions - LOGIN*******************************
 
 // Phone Number validation
 function phonevalid() {
@@ -71,51 +77,47 @@ function phonevalidlogin() {
 }
 
 // Login password strength and validation
-function passStrength() {
-    var passStrength = 0;    
-
-    var str1 = /^(?=.{8,})$/                                        //Atleast 8 characters check
-    var str2 = /^(?=.*[a-z])(?=.*[A-Z])$/                           //lowercase and uppercase check
-    var str3 = /^(?=.*[0-9])(?=.*[0-9])$/                           // Numeric character check
-    var str4 = /^(?=.*[!@#$%^&*])$/                                 // special character check
+function passStrengthLogin() {
+    let passStrengthLogin = 0;
 
     if (str4.test(passwordLogin.value)) {
-        passStrength = (passStrength + 1) % 3;
-        passwordLoginMsg.innerHTML = str[passStrength];
-        passwordLoginMsg.style.color = color[passStrength];
-        passwordLogin.style.color = color[passStrength];
+        passStrengthLogin = (passStrengthLogin + 1) % 3;
+        passwordLoginMsg.innerHTML = str[passStrengthLogin];
+        passwordLoginMsg.style.color = color[passStrengthLogin];
+        passwordLogin.style.color = color[passStrengthLogin];
         passwordLoginFlag = true;
         return true;
     } else if (str3.test(passwordLogin.value)) {
-        passStrength = (passStrength + 1) % 3;
-        passwordLoginMsg.innerHTML = str[passStrength];
-        passwordLoginMsg.style.color = color[passStrength];
-        passwordLogin.style.color = color[passStrength];
+        passStrengthLogin = (passStrengthLogin + 1) % 3;
+        passwordLoginMsg.innerHTML = str[passStrengthLogin];
+        passwordLoginMsg.style.color = color[passStrengthLogin];
+        passwordLogin.style.color = color[passStrengthLogin];
         passwordLoginFlag = true;
         return true;
     } else if (str2.test(passwordLogin.value)) {
-        passStrength = (passStrength + 1) % 3;
-        passwordLoginMsg.innerHTML = str[passStrength];
-        passwordLoginMsg.style.color = color[passStrength];
-        passwordLogin.style.color = color[passStrength];
+        passStrengthLogin = (passStrengthLogin + 1) % 3;
+        passwordLoginMsg.innerHTML = str[passStrengthLogin];
+        passwordLoginMsg.style.color = color[passStrengthLogin];
+        passwordLogin.style.color = color[passStrengthLogin];
         passwordLoginFlag = true;
         return true;
     } else if (passExp.test(passwordLogin.value)) {
-        passStrength = 2;
-        passwordLoginMsg.innerHTML = str[passStrength];
-        passwordLoginMsg.style.color = color[passStrength];
-        passwordLogin.style.color = color[passStrength];
+        passStrengthLogin = 2;
+        passwordLoginMsg.innerHTML = str[passStrengthLogin];
+        passwordLoginMsg.style.color = color[passStrengthLogin];
+        passwordLogin.style.color = color[passStrengthLogin];
         passwordLoginFlag = true;
         return true;
     } else {
         passwordLoginFlag = false;
-        passwordLoginMsg.innerHTML = str[passStrength];
-        passwordLoginMsg.style.color = color[passStrength];
-        passwordSignUp.style.color = color[passStrength];
+        passwordLoginMsg.innerHTML = str[passStrengthLogin];
+        passwordLoginMsg.style.color = color[passStrengthLogin];
+        passwordSignUp.style.color = color[passStrengthLogin];
         return false;
     }
 }
 
+//***************************Value check functions - SIGNUP*******************************
 
 // E-Mail validation signup
 function emailvalid() {
@@ -134,12 +136,7 @@ function emailvalid() {
 
 // Password Validation and confirmation for signup
 function passStrength() {
-    var passStrength = 0;    
-
-    var str1 = /^(?=.{8,})$/                                        //Atleast 8 characters check
-    var str2 = /^(?=.*[a-z])(?=.*[A-Z])$/                           //lowercase and uppercase check
-    var str3 = /^(?=.*[0-9])(?=.*[0-9])$/                           // Numeric character check
-    var str4 = /^(?=.*[!@#$%^&*])$/                                 // special character check
+    let passStrength = 0;
 
     if (str4.test(passwordSignUp.value)) {
         passStrength = (passStrength + 1) % 3;
