@@ -56,13 +56,13 @@
                     <!-- LOG IN -->
                     <form id="loginForm" onsubmit="return loginCheck()" action="./index.html">
                         <div class="mb-3">
-                            <label for="Phone" class="form-label">Phone number</label>
-                            <input type="number" class="form-control" id="phone-login">
+                            <label for="tel" class="form-label">Phone number</label>
+                            <input type="number" required class="form-control" id="phone-login" required>
                             <div id="phone-login-msg" class="form-text"></div>
                         </div>
                         <div class="mb-3">
                             <label for="Password" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="password-login">
+                            <input type="password" class="form-control" id="password-login" required>
                             <div id="password-login-msg" class="form-text"></div>
                         </div>
                         <div class="mb-3 form-check">
@@ -85,22 +85,22 @@
                     <form id="signupForm" onsubmit="return signupCheck()" action="./index.html">
                         <div class="mb-3">
                             <label for="phone" class="form-label">Phone Number</label>
-                            <input type="number" class="form-control" id="phone-signup">
+                            <input type="tel" class="form-control" id="phone-signup" required>
                             <div id="phone-signup-msg" class="form-text"></div>
                         </div>
                         <div class="mb-3">
                             <label for="Email" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="email-signup" aria-describedby="emailHelp">
+                            <input type="email" class="form-control" id="email-signup" required>
                             <div id="email-signup-msg" class="form-text"></div>
                         </div>
                         <div class="mb-3">
                             <label for="Password" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="password-signup">
+                            <input type="password" class="form-control" id="password-signup" required>
                             <div id="password-signup-msg" class="form-text">Make sure it contains atleast 8 characters including Uppercase, Lowercase, Numbers and special characters.</div>
                         </div>
                         <div class="mb-3">
                             <label for="Password" class="form-label">Confirm Password</label>
-                            <input type="password" class="form-control" id="confirm-password-singup">
+                            <input type="password" class="form-control" id="confirm-password-singup" required>
                             <div id="confirm-password-signup-msg" class="form-text"></div>
                         </div>
                         <button type="submit" class="btn btn-primary">Sign Up</button>
