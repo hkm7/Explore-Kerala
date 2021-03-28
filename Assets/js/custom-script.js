@@ -169,11 +169,14 @@ function loginCheck() {
 function signupCheck() {
     if (phoneSignupFlag && emailSignupFlag) {
         if (passwordSignupFlag && confirmPasswordSignupFlag) {
+            alert("Successfully signed up: Welcome to Explore Kerala");
             return true;
         } else {
+            alert("Sign up error: Check credentials.");
             return false;
         }
     } else {
+        alert("Sign up error: Check credentials.");
         return false;
     }
 }
