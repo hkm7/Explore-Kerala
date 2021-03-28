@@ -54,7 +54,7 @@
                     Already have an account ? <br>
                     LOGIN <br></p>
                     <!-- LOG IN -->
-                    <form>
+                    <form id="loginForm" onsubmit="return loginCheck()" action="./index.html">
                         <div class="mb-3">
                             <label for="Phone" class="form-label">Phone number</label>
                             <input type="number" class="form-control" id="phone-login">
@@ -82,7 +82,7 @@
                     <p style="font-weight: bold;"> Don't have an account ? <br>
                     SIGN UP<br></p>
                     <!-- SIGN UP -->
-                    <form onsubmit="return signupCheck()" action="./index.html">
+                    <form id="signupForm" onsubmit="return signupCheck()" action="./index.html">
                         <div class="mb-3">
                             <label for="phone" class="form-label">Phone Number</label>
                             <input type="number" class="form-control" id="phone-signup">
