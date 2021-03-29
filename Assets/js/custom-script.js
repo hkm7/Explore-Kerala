@@ -79,7 +79,7 @@ function phonevalid() {
 // E-Mail validation signup
 function emailvalid() {
     if (emailExp.test(emailSignUp.value)) {
-        emailSignupMsg.innerHTML = "Valid Email."
+        emailSignupMsg.innerHTML = "Valid Email.";
         emailSignupMsg.style.color = "green";
         emailSignupFlag = true;
         return true;
@@ -183,3 +183,19 @@ function signupCheck() {
 
 
 // ******************************************************************************************************
+
+var emailContact = document.getElementById("email-contact");
+var emailContactMsg = document.getElementById("email-msg-contact");
+var contactData = document.getElementById("");
+
+function ContactEmailvalid(){
+    if (emailExp.test(emailContact.value)) {
+        emailContactMsg.innerHTML = "Valid Email.";
+        emailContactMsg.style.color = "green";
+        return true;
+    } else {
+        emailContactMsg.innerHTML = "Invalid Mail.";
+        emailContactMsg.style.color = "red";
+        return false;
+    }
+}

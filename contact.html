@@ -60,11 +60,12 @@
             <form>
                 <div class="mb-3">
                     <label for="email" class="form-label">Email address</label>
-                    <input type="text" class="form-control" id="email-signup">
+                    <input type="email" class="form-control" id="email-contact" required onkeyup="ContactEmailvalid()">
+                    <div id="email-msg-contact" class="form-text"></div>
                 </div>
                 <div class="mb-3">
                     <label for="query" class="form-label">Question</label>
-                    <input type="text" class="form-control" id="query-asked" style="height: 200px;">
+                    <input type="text" class="form-control" id="query-asked" required style="height: 200px;">
                 </div>
                 <button type="submit" class="btn btn-primary">SUBMIT</button>
             </form>
