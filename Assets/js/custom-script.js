@@ -186,7 +186,6 @@ function signupCheck() {
 
 var emailContact = document.getElementById("email-contact");
 var emailContactMsg = document.getElementById("email-msg-contact");
-var contactData = document.getElementById("");
 
 function ContactEmailvalid(){
     if (emailExp.test(emailContact.value)) {
@@ -198,4 +197,9 @@ function ContactEmailvalid(){
         emailContactMsg.style.color = "red";
         return false;
     }
+}
+
+function formSubmit(){
+    alert("Query submitted successfully!");
+    return true;
 }
